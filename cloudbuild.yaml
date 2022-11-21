@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-3rd-project-363814/micro_service_2_60:latest','.']
+    id: 'build-image-myapp'
+    waitFor: ['-']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push','gcr.io/my-3rd-project-363814/micro_service_2_60:latest']
+    id: 'push-image-to-container-registry'
+    waitFor: ['build-image-myapp']
+options:
+  logging: CLOUD_LOGGING_ONLY
+images:
+- 'gcr.io/my-3rd-project-363814/micro_service_2_60:latest'
+

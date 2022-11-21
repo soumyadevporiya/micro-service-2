@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webappmicroservice2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webappmicroservice2
+  template:
+      metadata:
+        labels:
+          app: webappmicroservice2
+      spec:
+        containers:
+        - name: webappmicroservice2
+          image: gcr.io/my-3rd-project-363814/micro_service_2_60:latest
+          ports:
+          - containerPort: 60
