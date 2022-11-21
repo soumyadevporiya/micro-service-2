@@ -1,6 +1,5 @@
 flask
 pint
 kubernetes
-concurrent
 httpx
 asyncio
