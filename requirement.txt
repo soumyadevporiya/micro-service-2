@@ -1,6 +1,6 @@
 flask
 pint
 kubernetes
-concurrent.futures
+concurrent
 httpx
 asyncio
